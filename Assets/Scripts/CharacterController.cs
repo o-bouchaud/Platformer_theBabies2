@@ -64,4 +64,9 @@ private bool isOnGround = false;
     {
         
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        
+    }
 }
