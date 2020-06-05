@@ -24,7 +24,7 @@ private bool isOnGround = false;
         playerController.Enable();
         playerController.Main.Move.performed += MoveOnPerformed;
         playerController.Main.Move.canceled += MoveOnCanceled;
-        playerController.myAnimator.Jump.performed += JumpOnPerformed;
+        playerController.Main.Jump.performed += JumpOnPerformed;
 
     }
 
@@ -41,12 +41,12 @@ private bool isOnGround = false;
 
     private void MoveOnPerformed(InputAction.CallbackContext obj)
     {
-
+        stickDirection = obj.ReadValue<Vector2>();
     }
 
     private void MoveOnCanceled(InputAction.CallbackContext obj)
     {
-
+        stickDirection = Vector2.zero;
     }
 
 
