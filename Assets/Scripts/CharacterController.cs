@@ -55,7 +55,8 @@ private bool isOnGround = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        myRigidbody2D = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
