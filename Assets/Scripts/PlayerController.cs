@@ -17,6 +17,30 @@ private Animator myAnimator;
 private bool isOnGround = false;
 //to verify if the player is on the ground;
 
+
+    private void OnEnable()
+    {
+
+    }
+
+    private void JumpOnPerformed()
+    {
+
+    }
+
+    private void MoveOnPerformed()
+    {
+
+    }
+
+    private void MoveOnCanceled()
+    {
+
+    }
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +48,7 @@ private bool isOnGround = false;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
     }
