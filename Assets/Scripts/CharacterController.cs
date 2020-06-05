@@ -62,11 +62,27 @@ private bool isOnGround = false;
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+        var direction = new Vector2
+        {
+            x = stickDirection.x, y = 0
+        };
+
+        if (myRigidbody2D.velocity.sqrMagnitude < maxSpeed)
+        {
+            myRigidbody2D.AddForce(direction * speed);
+        }
+
+
+        var isRunning = isOnGround && Mathf.Abs(myRigidbody2D.velocity.x) > 0.1f;
+        myAnimator.SetBool("IsRunning", isRunning);
+        var isAscending = !isOnGround && myRigidbody2D.velocity.y > 0;
+        myAnimator.SetBool("IsAscending", isAscending);
+        var isDescending = !isOnGround && myRigidbody2D.velocity.y < 0;
+        myAnimator.SetBool("IsDescending", isDescending);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        
+
     }
 }
