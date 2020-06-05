@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class CharacterController : MonoBehaviour
 {
 [SerializeField] private float speed;
 [SerializeField] private float maxSpeed;
@@ -20,20 +20,31 @@ private bool isOnGround = false;
 
     private void OnEnable()
     {
+        var playerController = new PlayerController();
+        playerController.Enable();
+        playerController.Main.Move.performed += MoveOnPerformed;
+        playerController.Main.Move.canceled += MoveOnCanceled;
+        playerController.myAnimator.Jump.performed += JumpOnPerformed;
 
     }
 
-    private void JumpOnPerformed()
+    private void JumpOnPerformed(InputAction.CallbackContext obj)
+    {
+
+        if (isOnGround)
+        {
+            myRigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            isOnGround = false;
+        }
+
+    }
+
+    private void MoveOnPerformed(InputAction.CallbackContext obj)
     {
 
     }
 
-    private void MoveOnPerformed()
-    {
-
-    }
-
-    private void MoveOnCanceled()
+    private void MoveOnCanceled(InputAction.CallbackContext obj)
     {
 
     }
