@@ -83,6 +83,11 @@ private bool isOnGround = false;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-
+        var touchingGround = ground == (ground | (1 << other.gameObject.layer));
+        var touchFromAbove = other.contacts[0].normal == Vector2.up;
+        if (touchingGround && touchFromAbove)
+        {
+            isOnGround = true;
+        }
     }
 }
