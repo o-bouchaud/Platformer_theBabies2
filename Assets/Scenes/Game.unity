@@ -768,7 +768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   maxSpeed: 20
-  jumpForce: 10
+  jumpForce: 8
   ground:
     serializedVersion: 2
     m_Bits: 256
