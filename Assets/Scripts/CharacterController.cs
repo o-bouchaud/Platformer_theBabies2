@@ -16,6 +16,7 @@ private Vector2 stickDirection;
 private Animator myAnimator;
 private bool isOnGround = false;
 //to verify if the player is on the ground;
+private SpriteRenderer myRenderer;
 
 
     private void OnEnable()
@@ -79,6 +80,15 @@ private bool isOnGround = false;
         myAnimator.SetBool("IsAscending", isAscending);
         var isDescending = !isOnGround && myRigidbody2D.velocity.y < 0;
         myAnimator.SetBool("IsDescending", isDescending);
+
+        /*if (direction.x < 0)
+        {
+            myRenderer.flipX = true;
+        }
+        else if (direction.x > 0)
+        {
+            myRenderer.flipX = false;
+        }*/
     }
 
     private void OnCollisionEnter2D(Collision2D other)
