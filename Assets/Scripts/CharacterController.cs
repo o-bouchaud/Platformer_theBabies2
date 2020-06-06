@@ -16,6 +16,7 @@ private Vector2 stickDirection;
 private Animator myAnimator;
 private bool isOnGround = false;
 //to verify if the player is on the ground;
+ private bool isFacingLeft = true;
 private SpriteRenderer myRenderer;
 
 
@@ -58,6 +59,7 @@ private SpriteRenderer myRenderer;
     {
         myRigidbody2D = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+        myRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -80,6 +82,8 @@ private SpriteRenderer myRenderer;
         myAnimator.SetBool("IsAscending", isAscending);
         var isDescending = !isOnGround && myRigidbody2D.velocity.y < 0;
         myAnimator.SetBool("IsDescending", isDescending);
+        myAnimator.SetBool("IsGrounded", isOnGround);
+        Flip();
 
         /*if (direction.x < 0)
         {
@@ -89,6 +93,20 @@ private SpriteRenderer myRenderer;
         {
             myRenderer.flipX = false;
         }*/
+    }
+
+    private void Flip()
+    {
+         if (stickDirection.x < -0.1f)
+        {
+            isFacingLeft = true;
+        }
+
+        if (stickDirection.x > 0.1f)
+        {
+            isFacingLeft = false;
+        }
+        myRenderer.flipX = isFacingLeft;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
