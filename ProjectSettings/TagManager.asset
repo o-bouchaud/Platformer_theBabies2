@@ -48,14 +48,14 @@ TagManager:
   - name: Background Forest
     uniqueID: 2008668311
     locked: 0
-  - name: Background
-    uniqueID: 412527091
+  - name: MiddleGround Forest
+    uniqueID: 4064959771
     locked: 0
   - name: Forest
     uniqueID: 482389211
     locked: 0
-  - name: MiddleGround Forest
-    uniqueID: 4064959771
+  - name: Background
+    uniqueID: 412527091
     locked: 0
   - name: Ground Forest
     uniqueID: 213440179
