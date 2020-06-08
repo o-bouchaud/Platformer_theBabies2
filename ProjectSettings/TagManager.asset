@@ -42,3 +42,36 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Player
+    uniqueID: 2778371407
+    locked: 0
+  - name: Background Forest
+    uniqueID: 2008668311
+    locked: 0
+  - name: Background
+    uniqueID: 412527091
+    locked: 0
+  - name: Forest
+    uniqueID: 482389211
+    locked: 0
+  - name: MiddleGround Forest
+    uniqueID: 4064959771
+    locked: 0
+  - name: Ground Forest
+    uniqueID: 213440179
+    locked: 0
+  - name: Foreground Forest
+    uniqueID: 571264737
+    locked: 0
+  - name: Background SunnyLand
+    uniqueID: 503343455
+    locked: 0
+  - name: Middleground SunnyLand
+    uniqueID: 51264877
+    locked: 0
+  - name: Foreground SunnyLand
+    uniqueID: 3561631845
+    locked: 0
+  - name: Ground SunnyLand
+    uniqueID: 3607813851
+    locked: 0
