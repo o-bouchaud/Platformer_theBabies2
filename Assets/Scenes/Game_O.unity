@@ -67730,8 +67730,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 1.0207883
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -67987,6 +67987,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground SunnyLand
       objectReference: {fileID: 0}
+    - target: {fileID: 7694002230047029522, guid: 52def500c2a0b714390db80dadab0fd6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7694002230047029523, guid: 52def500c2a0b714390db80dadab0fd6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -68041,6 +68046,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7694002230047029535, guid: 52def500c2a0b714390db80dadab0fd6,
+        type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52def500c2a0b714390db80dadab0fd6, type: 3}
