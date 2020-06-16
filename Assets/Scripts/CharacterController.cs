@@ -112,7 +112,9 @@ private SpriteRenderer myRenderer;
     private void OnCollisionEnter2D(Collision2D other)
     {
         var touchingGround = ground == (ground | (1 << other.gameObject.layer));
-        var touchFromAbove = other.contacts[0].normal == Vector2.up;
+        var touchFromAbove =  other.contacts[0].normal.y > other.contacts[0].normal.x;
+        Debug.Log(other.contacts[0].normal);
+        Debug.Log(touchFromAbove);
         if (touchingGround && touchFromAbove)
         {
             isOnGround = true;
