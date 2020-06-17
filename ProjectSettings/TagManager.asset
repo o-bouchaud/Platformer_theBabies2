@@ -15,8 +15,8 @@ TagManager:
   - 
   - 
   - Ground
-  - 
-  - 
+  - Player
+  - Lights
   - 
   - 
   - 
@@ -41,9 +41,6 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Player
-    uniqueID: 2778371407
     locked: 0
   - name: Background Forest
     uniqueID: 2008668311
@@ -72,6 +69,12 @@ TagManager:
   - name: Foreground SunnyLand
     uniqueID: 3561631845
     locked: 0
+  - name: Player
+    uniqueID: 2778371407
+    locked: 0
   - name: Ground SunnyLand
     uniqueID: 3607813851
+    locked: 0
+  - name: Lights
+    uniqueID: 577425969
     locked: 0
