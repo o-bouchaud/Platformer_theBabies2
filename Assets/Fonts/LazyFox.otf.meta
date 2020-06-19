@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2b64d7150a9b0364bab135de31beca27
+guid: 621d7cf5dae9151429651e140fbce0e3
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Avocado Creamy
+  fontName: LazyFox
   fontNames:
-  - Avocado Creamy
+  - LazyFox
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
