@@ -2474,7 +2474,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: LazyFox SDF Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
-  m_ShaderKeywords: GLOW_ON
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -2519,7 +2519,7 @@ Material:
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
     - _GlowInner: 0.168
-    - _GlowOffset: 0.37
+    - _GlowOffset: 0.81
     - _GlowOuter: 1
     - _GlowPower: 0.057
     - _GradientScale: 6
@@ -2533,7 +2533,7 @@ Material:
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.8333333
-    - _ScaleRatioB: 0.49422142
+    - _ScaleRatioB: 0.3740792
     - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
