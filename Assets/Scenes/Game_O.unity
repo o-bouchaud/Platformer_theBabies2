@@ -364,11 +364,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 7625578313820351572, guid: 0bb313ff93a00cb4089344b357dffc31,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7625578313820351579, guid: 0bb313ff93a00cb4089344b357dffc31,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -479,31 +474,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2115073582}
-    - target: {fileID: 7625578314516706764, guid: 0bb313ff93a00cb4089344b357dffc31,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ExitGame
-      objectReference: {fileID: 0}
     - target: {fileID: 7625578314586517160, guid: 0bb313ff93a00cb4089344b357dffc31,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1287818419}
-    - target: {fileID: 7625578314586517160, guid: 0bb313ff93a00cb4089344b357dffc31,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MainMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 7625578315744050986, guid: 0bb313ff93a00cb4089344b357dffc31,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1287818419}
     - target: {fileID: 7625578315744050986, guid: 0bb313ff93a00cb4089344b357dffc31,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Resume
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1287818419}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bb313ff93a00cb4089344b357dffc31, type: 3}
 --- !u!1 &180610639 stripped
