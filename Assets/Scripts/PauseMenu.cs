@@ -90,6 +90,6 @@ public class PauseMenu : MonoBehaviour
     {
         //this function will allow us to open the Menu scene;
                 Time.timeScale = 1f;
-                SceneManager.LoadScene("Menu");
+                SceneManager.LoadScene("Menu_A");
     }
 }
