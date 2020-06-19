@@ -12,16 +12,23 @@ public class CharacterController : MonoBehaviour
 //in order to select one or more of our ground's layers;
 
 private Rigidbody2D myRigidbody2D;
-private Vector2 stickDirection;
+//this variable refers to a RigidBody2D Component;
+
 private Animator myAnimator;
-private bool isOnGround = false;
-//to verify if the player is on the ground;
- private bool isFacingLeft = true;
+//this variable refers to an Animator Component;
 private SpriteRenderer myRenderer;
+//this variable refers to a SpriteRenderer Component;
+private Vector2 stickDirection;
+private bool isOnGround = false;
+//this bool will verify if the player is on the ground;
+ private bool isFacingLeft = true;
+ //this bool will check which direction the Player's facing;
+
 
 
     private void OnEnable()
     {
+        //we're setting up each control from our InputSystem;
         var playerController = new PlayerController();
         playerController.Enable();
         playerController.Main.Move.performed += MoveOnPerformed;
@@ -32,23 +39,30 @@ private SpriteRenderer myRenderer;
 
     private void JumpOnPerformed(InputAction.CallbackContext obj)
     {
-
+        //this function will be executed when the "Jump" button is pressed (here SPACEBAR);
         if (isOnGround)
+        //we're checking if the Player's touching the ground in order to prevent it for infinite jumping;
         {
             myRigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            //this is the jump, we can change the force of the jump in the inspector since it's a serialized variable;
             isOnGround = false;
+            //since the player is jumping (and not touching the ground anymore), we set up the "isOnGround" boolean to false;
+            //Is it on ground ? NO -> False;
         }
 
     }
 
     private void MoveOnPerformed(InputAction.CallbackContext obj)
+    //this function will be executed when the arrows keys/or the joystick will be used;
     {
         stickDirection = obj.ReadValue<Vector2>();
     }
 
     private void MoveOnCanceled(InputAction.CallbackContext obj)
+    //this function will be executed as soon as the arrows keys/the joystick will be released;
     {
         stickDirection = Vector2.zero;
+        //the direction is set to 0 which means the player isn't moving anymore;
     }
 
 
@@ -57,6 +71,8 @@ private SpriteRenderer myRenderer;
     // Start is called before the first frame update
     void Start()
     {
+        //we assign each Component to it's variable;
+        //we're taking them from the GameObject which holds the script;
         myRigidbody2D = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         myRenderer = GetComponent<SpriteRenderer>();
@@ -65,38 +81,31 @@ private SpriteRenderer myRenderer;
     // Update is called once per frame
     void FixedUpdate()
     {
-        var direction = new Vector2
-        {
-            x = stickDirection.x, y = 0
-        };
+        var direction = new Vector2 { x = stickDirection.x, y = 0 };
 
+        //we set up the movement by specifying the Player will go faster till it reaches their maximum speed;
         if (myRigidbody2D.velocity.sqrMagnitude < maxSpeed)
         {
             myRigidbody2D.AddForce(direction * speed);
         }
 
-
+        //the following lines are controlling the animator;
         var isRunning = isOnGround && Mathf.Abs(myRigidbody2D.velocity.x) > 0.1f;
         myAnimator.SetBool("IsRunning", isRunning);
+
         var isAscending = !isOnGround && myRigidbody2D.velocity.y > 0;
         myAnimator.SetBool("IsAscending", isAscending);
+
         var isDescending = !isOnGround && myRigidbody2D.velocity.y < 0;
         myAnimator.SetBool("IsDescending", isDescending);
         myAnimator.SetBool("IsGrounded", isOnGround);
         Flip();
-
-        /*if (direction.x < 0)
-        {
-            myRenderer.flipX = true;
-        }
-        else if (direction.x > 0)
-        {
-            myRenderer.flipX = false;
-        }*/
     }
 
     private void Flip()
     {
+    //this function will use the player's position to flip the Sprite accordingly;
+    //then, when going left, the sprite will flip so the Player will face left as well.
          if (stickDirection.x < -0.1f)
         {
             isFacingLeft = true;
@@ -111,9 +120,14 @@ private SpriteRenderer myRenderer;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        //we're checking if the Player lands on a GameObject being on the "Ground" layer; 
         var touchingGround = ground == (ground | (1 << other.gameObject.layer));
-        var touchFromAbove = other.contacts[0].normal == Vector2.up;
+        //we're cheking if the Player lands on a horizontal surface;
+        var touchFromAbove =  other.contacts[0].normal.y > other.contacts[0].normal.x;
+
         if (touchingGround && touchFromAbove)
+        //if the Player lands on a "Ground" layer which has an horizontal surface,
+        //the boolean will be set to true;
         {
             isOnGround = true;
         }
